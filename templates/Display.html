@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Crop Prediction Result{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            background-color: #e9f7ef;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .container {
+            margin-top: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-size: 2.5rem;
+            text-align: center;
+            background-image: linear-gradient(to right, #4CAF50, #81c784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>N Level (in kg/hectare)</th>
+                <th>P Level (in kg/hectare)</th>
+                <th>K Level (in kg/hectare)</th>
+                <th>Humidity (in %)</th>
+                <th>Temperature (in °C)</th>
+                <th>Rainfall (in mm)</th>
+                <th>PH</th>
+            </tr>
+            <tr>
+                {% for i in values %}
+                <td>{{ i }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Nitrogen Level</th>
+                <th>Phosphorous Level</th>
+                <th>Potassium Level</th>
+                <th>Humidity</th>
+                <th>Temperature</th>
+                <th>Rainfall</th>
+                <th>PH Level</th>
+            </tr>
+            <tr>
+                {% for i in cont %}
+                <td>{{ i }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+
+        <h1>Best crop to grow in this condition is {{ cropName }}</h1>
+    </div>
+{% endblock %}

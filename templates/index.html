@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Crop Details{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            height: 100vh;
+            background-color: #e9f7ef;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-right: 15px;
+            width: 120px;
+            color: #555;
+            font-size: 14px;
+        }
+        .box {
+            padding: 10px;
+            width: calc(100% - 140px);
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+        .box:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #4a9e4b;
+            transform: scale(1.02);
+        }
+    </style>
+
+    <div class="form">
+        <form action="/login" method="post">
+            <h1>Submit Details</h1>
+            
+            <div class="form-group">
+                <label for="Nitrogen">Nitrogen:</label>
+                <input type="number" step="any" min="1" max="200" name="Nitrogen" id="Nitrogen" placeholder="Nitrogen in soil" class="box" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="Phosphorous">Phosphorous:</label>
+                <input type="number" step="any" min="1" max="200" name="Phosphorous" id="Phosphorous" placeholder="Phosphorous in soil" class="box" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Potassium">Potassium:</label>
+                <input type="number" step="any" min="1" max="200" name="Potassium" id="Potassium" placeholder="Potassium in soil" class="box" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Temperature">Temperature:</label>
+                <input type="number" step="any" min="1" max="65" name="Temperature" id="Temperature" placeholder="Temperature in degree" class="box" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Humidity">Humidity:</label>
+                <input type="number" step="any" min="1" max="100" name="Humidity" id="Humidity" placeholder="Humidity in percentage" class="box" required />
+            </div>
+
+            <div class="form-group">
+                <label for="PH">PH:</label>
+                <input type="number" step="any" min="1" max="14" name="PH" id="PH" placeholder="PH from 1-14" class="box" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Rainfall">Rainfall:</label>
+                <input type="number" step="any" name="Rainfall" id="Rainfall" placeholder="Rainfall in mm" class="box" required />
+            </div>
+
+            <div class="button-container">
+                <input type="submit" class="button" value=" Submit " />
+            </div>
+        </form>
+    </div>
+{% endblock %}
