@@ -38,7 +38,7 @@ As the global population grows, sustainable and efficient food production become
 
 ## Website Links:
 - *Deployed on AWS*: http://www.croprecommendatation.shop/login
-- *Deployed on Render*: https://aws-paper.onrender.com/ (Alternative if AWS Instance Stops working)
+- *Deployed on Render*: https://crop-recommendation-system-aws.onrender.com (Alternative if AWS Instance Stops working)
 
 ## Website ScreenShots:
 ![Homepage Screenshot](ScreenShots/homepage.jpg)
